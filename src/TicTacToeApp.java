@@ -1,37 +1,22 @@
-import java.util.Random;
+import java.util.Scanner;
 
 public class TicTacToeApp {
 
+    // Method to take user input
+    public static int getUserInput() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a slot number (1-9): ");
+        int slot = scanner.nextInt();   // Read integer input
+
+        return slot;  // Return the value
+    }
+
     public static void main(String[] args) {
 
-        // Player names (you can modify later)
-        String player1 = "Player 1";
-        String player2 = "Player 2";
+        int userSlot = getUserInput();  // Call method
 
-        // Game state variables
-        String currentPlayer;
-        char player1Symbol;
-        char player2Symbol;
-
-        // 1. Random Toss
-        Random random = new Random();
-        int toss = random.nextInt(2); // 0 or 1
-
-        // 2. Conditional Logic
-        if (toss == 0) {
-            currentPlayer = player1;
-            player1Symbol = 'X';
-            player2Symbol = 'O';
-        } else {
-            currentPlayer = player2;
-            player2Symbol = 'X';
-            player1Symbol = 'O';
-        }
-
-        // 3. Display Results
-        System.out.println("Toss Result Completed!");
-        System.out.println(player1 + " Symbol: " + player1Symbol);
-        System.out.println(player2 + " Symbol: " + player2Symbol);
-        System.out.println("Starting Player: " + currentPlayer);
+        System.out.println("You selected slot: " + userSlot);
     }
 }
+
